@@ -112,6 +112,10 @@ def transferirmonto(): #Funciòn para transferir , verifica si hay condiciones p
     finalqty=0
     datos=pd.read_csv('data05.csv')
     df = pd.DataFrame(datos)
+    isempty = df.empty
+    if isempty==True:
+        print("**Data de la billetera está vacia, por favor ir primero a la opción 1**")
+        exit()
     ar=np.array(df)
     b2 = input("Indique billetera destino-> ")
     while(billetera==b2):
@@ -164,6 +168,10 @@ def transferirmonto(): #Funciòn para transferir , verifica si hay condiciones p
 def mostrarbalancemoneda(): #Solicita la moneda para calcular el balance total de ella
     datos=pd.read_csv('data05.csv')
     df = pd.DataFrame(datos)
+    isempty = df.empty
+    if isempty==True:
+        print("**Data de la billetera está vacia, por favor ir primero a la opción 1**")
+        exit()
     ar=np.array(df)
     finalqty=0
     finalsaldo=0
@@ -194,6 +202,10 @@ def mostrarbalancemoneda(): #Solicita la moneda para calcular el balance total d
 def mostrarbalancegeneral(): #Muestra el balance general, usando pandas
     datos=pd.read_csv('data05.csv')
     df = pd.DataFrame(datos)
+    isempty = df.empty
+    if isempty==True:
+        print("**Data de la billetera está vacia, por favor ir primero a la opción 1**")
+        exit()
     print("Balance general:")
     print("************************")
     print("Por Moneda: ")
@@ -215,6 +227,10 @@ def mostrarbalancegeneral(): #Muestra el balance general, usando pandas
 def historico(): #Muestra histórico de transacciones , las negativas son transferencias a otras billeteras
     datos=pd.read_csv('data05.csv')
     df = pd.DataFrame(datos)
+    isempty = df.empty
+    if isempty==True:
+        print("**Data de la billetera está vacia, por favor ir primero a la opción 1**")
+        exit()
     ar=np.array(df)
     print("Historico de transacciones: ")
     for i in range(len(ar)):
